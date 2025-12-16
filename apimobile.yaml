@@ -1437,12 +1437,12 @@ paths:
       tags:
         - Подразделения
       summary: Получить список подразделений
-      description: "## Входные параметры:  \n\n|Поле       | Тип               | Описание |\n| ------------- |:------------------:| :-----| \n|accessToken  (required)   | string    | Токен доступа |\n\n ## Список выходных параметров: \n\n|Поле       | Тип               | Описание |\n| ------------- |:------------------:| :-----|\n|id     | string    | Уникальный идентификатор подразделения |\n| name     | string |  Наименование подразделения |\n| creationDate  | string         |    Дата создания |\n|checkpoint     | integer   | КПП |\n|timeStart     | string   | Время начала работы |\n|timeEnd     | string   | Время окончания работы |\n|imageRef     | string   | URL картинки подразделения |\n|contactInfo     | array of objects    | Массив контактной информации (presentation, type) |\n|color     | string    | Цвет подразделения | \n\n ## Объект order имеет следующие доступные к сортировке поля: \n\n|Поле               | \n| -------------| \n|id     |\n| name     | \n\n ## Объект filters имеет следующие доступные к фильтрации поля: \n\n|Поле       | Тип               | Описание |\n| ------------- |:----------------:|:-----|\n|id     | array of strings    | Массив уникальных идентификаторов подразделений |\n| creationDateStart     |string |  Дата создания от |\n| creationDateEnd  | string         |   Дата создания до  |\n|timeStartStart     | string   | Время начала работы от |\n|timeStartEnd     | string   | Время начала работы до |\n|timeEndStart     | string   | Время окончания работы от |\n|timeEndEnd     | string   | Время окончания работы до|\n|fullText     | string   | Поиск по полю name, region, city | "
+      description: "## Входные параметры:  \n\n|Поле       | Тип               | Описание |\n| ------------- |:------------------:| :-----| \n|accessToken  (required)   | string    | Токен доступа |\n\n ## Список выходных параметров: \n\n|Поле       | Тип               | Описание |\n| ------------- |:------------------:| :-----|\n|id     | string    | Уникальный идентификатор подразделения |\n| name     | string |  Наименование подразделения |\n| creationDate  | string         |    Дата создания |\n|checkpoint     | integer   | КПП |\n|timeStart     | string   | Время начала работы |\n|timeEnd     | string   | Время окончания работы |\n|imageRef     | string   | URL картинки подразделения |\n|contactInfo     | array of objects    | Массив контактной информации (presentation, type) |\n|color     | string    | Цвет подразделения | \n|isHead     | boolean   | Основной филиал|\n|isArchived     | boolean   | В архиве| \n\n ## Объект order имеет следующие доступные к сортировке поля: \n\n|Поле               | \n| -------------| \n|id     |\n| name     | \n\n ## Объект filters имеет следующие доступные к фильтрации поля: \n\n|Поле       | Тип               | Описание |\n| ------------- |:----------------:|:-----|\n|id     | array of strings    | Массив уникальных идентификаторов подразделений |\n| creationDateStart     |string |  Дата создания от |\n| creationDateEnd  | string         |   Дата создания до  |\n|timeStartStart     | string   | Время начала работы от |\n|timeStartEnd     | string   | Время начала работы до |\n|timeEndStart     | string   | Время окончания работы от |\n|timeEndEnd     | string   | Время окончания работы до|\n|isHead     | boolean   | Основной филиал|\n|isArchived     | boolean   | В архиве|\n|fullText     | string   | Поиск по полю name, region, city | "
       operationId: divisionList
       requestBody:
         content:
           application/json:
-            schema:
+            schema: 
               $ref: '#/components/schemas/DivisionListRequest'
       responses:
         '200':
@@ -7663,4 +7663,5 @@ components:
         - name: "Входящее"
           number: 0
         - name: "Исходящее"
+
           number: 1
